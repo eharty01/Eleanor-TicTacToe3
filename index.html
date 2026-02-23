@@ -110,6 +110,13 @@
                 id = "sq"+i;
                 document.write("<div class='square' id='" + id + "'></div>");
             }
+
+            const gridSquares = document.querySelectorAll('.square');
+            gridSquares.forEach(gridSquare => {
+                gridSquare.addEventListener('click', function() {
+                    alert("We know you clicked a square!");
+                });
+            });
         </script>
     </div>
 
