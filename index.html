@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+
+        h1 {
+            color: grey;
+            justify-content: center;
+            display: flex;
+            text-shadow: 3px 3px lavender;
+            border: 2px dotted lavender;
+            border-radius: 15px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h1:hover {
+            background-color: white;
+        }
+
+        .TTTboard {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            width: 330px;
+            margin: 0 auto;
+        }
+
+        .playerTurn {
+            color: grey;
+            border: 2px solid grey;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 110px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .square {
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-size: 90px;
+            font-family: 'Courier New', Courier, monospace;
+            color: gray;
+        }
+
+        .square:hover {
+            background-color: lightslategray;
+            color: white;
+        }
+
+        .winCondition {
+            color: grey;
+            border: 2px solid grey;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 150px;
+            margin: 0 auto;
+            margin-top: 20px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .winCondition:hover {
+            background-color: lightslategray;
+            color: white;
+        }
+
+        button {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 15px;
+            color: lightslategray;
+            min-height: 35px;
+            min-width: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+
+    <script>
+        const randomNum = Math.round(Math.random());
+        if (randomNum = 0) {
+            document.write("<div class='playerTurn'>Player O Turn</div>");
+        } else {
+            document.write("<div class='playerTurn'>Player X Turn</div>");
+        }
+    </script>
+
+    <div class="TTTboard">
+        <script>
+            const NUM_SQUARES = 9;
+            for (i=0; i<NUM_SQUARES; i++)
+            {
+                id = "sq"+i;
+                document.write("<div class='square' id='" + id + "'></div>");
+            }
+        </script>
+    </div>
+
+    <div class="winCondition">X Wins! Play Again?</div>
+
+    <button type="button" class = "start-button">
+        Start Game!
+    </button>
+
+</body>
+
+</html>
