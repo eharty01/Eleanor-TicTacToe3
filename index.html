@@ -115,7 +115,7 @@
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
                     alert("We know you clicked a square!");
-                    square.textContent = "X";
+                    this.textContent = "X";
                 });
             });
         </script>
