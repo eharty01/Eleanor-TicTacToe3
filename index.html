@@ -99,6 +99,7 @@
     <h1>Tic Tac Toe</h1>
 
     <script>
+        /* generate a random number that will round to 0 or 1, determining player turn */
         var randomNum = Math.round(Math.random());
 
         if (randomNum == 0) {
@@ -117,11 +118,13 @@
                 document.write("<div class='square' id='" + id + "'></div>");
             }
 
+            /* pop up alert and turn swap */
             const gridSquares = document.querySelectorAll('.square');
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
                     alert("You've selected square: " + this.id);
 
+                    /* make sure square is empty first */
                     if (this.textContent == '') {
                         if (randomNum == 0) {
                             this.textContent = "0";
@@ -138,8 +141,10 @@
         </script>
     </div>
 
+    <!-- note to self: will probably want to hide until the end in the next stage -->
     <div class="winCondition">X Wins! Play Again?</div>
 
+    <!-- clear the board with reload -->
     <button type="button" onclick="window.location.reload();" class = "start-button">
         Start Game!
     </button>
