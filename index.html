@@ -88,6 +88,11 @@
             min-height: 35px;
             min-width: 35px;
         }
+
+        button:hover {
+            background-color: lightslategray;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -96,13 +101,10 @@
     <script>
         var randomNum = Math.round(Math.random());
 
-        const showPlayerTurn = document.createElement('div');
-        showPlayerTurn.className = 'playerTurn';
-
         if (randomNum == 0) {
-            showPlayerTurn.textContent = "Player O Turn";
+            document.write("<div class='playerTurn'>Player O Turn</div>");
         } else {
-            showPlayerTurn.textContent = "Player X Turn";
+            document.write("<div class='playerTurn'>Player O Turn</div>");
         }
     </script>
 
@@ -118,17 +120,17 @@
             const gridSquares = document.querySelectorAll('.square');
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
-                    alert("You've selected square " + this.id);
+                    alert("You've selected square: " + this.id);
 
                     if (this.textContent == '') {
                         if (randomNum == 0) {
                             this.textContent = "0";
                             randomNum = 1;
-                            showPlayerTurn.textContent = "Player X Turn";
+                            document.querySelector('playerTurn').textContent="Player X Turn";
                         } else {
                             this.textContent = "X";
                             randomNum = 0;
-                            showPlayerTurn.textContent = "Player O Turn";
+                            document.querySelector('playerTurn').textContent="Player O Turn";
                         }
                     }
                 });
