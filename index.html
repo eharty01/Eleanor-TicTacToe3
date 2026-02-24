@@ -104,7 +104,7 @@
         if (randomNum == 0) {
             document.write("<div class='playerTurn'>Player O Turn</div>");
         } else {
-            document.write("<div class='playerTurn'>Player O Turn</div>");
+            document.write("<div class='playerTurn'>Player X Turn</div>");
         }
     </script>
 
@@ -126,11 +126,11 @@
                         if (randomNum == 0) {
                             this.textContent = "0";
                             randomNum = 1;
-                            document.querySelector('playerTurn').textContent="Player X Turn";
+                            document.querySelector('.playerTurn').textContent="Player X Turn";
                         } else {
                             this.textContent = "X";
                             randomNum = 0;
-                            document.querySelector('playerTurn').textContent="Player O Turn";
+                            document.querySelector('.playerTurn').textContent="Player O Turn";
                         }
                     }
                 });
@@ -140,7 +140,7 @@
 
     <div class="winCondition">X Wins! Play Again?</div>
 
-    <button type="button" class = "start-button">
+    <button type="button" onclick="window.location.reload();" class = "start-button">
         Start Game!
     </button>
 
