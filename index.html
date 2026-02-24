@@ -93,15 +93,17 @@
 <body>
     <h1>Tic Tac Toe</h1>
 
+    <script>
+        const randomNum = Math.round(Math.random());
+        if (randomNum == 0) {
+            document.write("<div class='playerTurn'>Player O Turn</div>");
+        } else {
+            document.write("<div class='playerTurn'>Player X Turn</div>");
+        }
+    </script>
+
     <div class="TTTboard">
         <script>
-            const randomNum = Math.round(Math.random());
-            if (randomNum == 0) {
-                document.write("<div class='playerTurn'>Player O Turn</div>");
-            } else {
-                document.write("<div class='playerTurn'>Player X Turn</div>");
-            }
-            
             const NUM_SQUARES = 9;
             for (i=0; i<NUM_SQUARES; i++)
             {
@@ -113,7 +115,7 @@
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
                     alert("We know you clicked a square!");
-                    //square.textContent = "X";
+                    square.textContent = "X";
                 });
             });
         </script>
