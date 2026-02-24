@@ -118,7 +118,7 @@
             const gridSquares = document.querySelectorAll('.square');
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
-                    alert("We know you clicked a square!");
+                    alert("You've selected square " + this.id);
 
                     if (this.textContent == '') {
                         if (randomNum == 0) {
@@ -138,7 +138,7 @@
 
     <div class="winCondition">X Wins! Play Again?</div>
 
-    <button type="button" onclick="window.location.reload();" class = "start-button">
+    <button type="button" class = "start-button">
         Start Game!
     </button>
 
