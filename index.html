@@ -122,7 +122,7 @@
             const gridSquares = document.querySelectorAll('.square');
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
-                    alert("You've selected square: " + this.id);
+                    alert("You've selected square: " + this.id[2]);
 
                     /* make sure square is empty first */
                     if (this.textContent == '') {
