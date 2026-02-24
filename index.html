@@ -95,10 +95,14 @@
 
     <script>
         var randomNum = Math.round(Math.random());
+
+        const showPlayerTurn = document.createElement('div');
+        showPlayerTurn.className = 'playerTurn';
+
         if (randomNum == 0) {
-            document.write("<div class='playerTurn'>Player O Turn</div>");
+            showPlayerTurn.textContent = "Player O Turn";
         } else {
-            document.write("<div class='playerTurn'>Player X Turn</div>");
+            showPlayerTurn.textContent = "Player X Turn";
         }
     </script>
 
@@ -115,14 +119,17 @@
             gridSquares.forEach(gridSquare => {
                 gridSquare.addEventListener('click', function() {
                     alert("We know you clicked a square!");
-                    if (randomNum == 0) {
-                        this.textContent = "O";
-                        randomNum = 1;
-                        document.write("<div class='playerTurn'>Player X Turn</div>");
-                    } else {
-                        this.textContent = "X";
-                        randomNum = 0;
-                        document.write("<div class='playerTurn'>Player O Turn</div>");
+
+                    if (this.textContent == '') {
+                        if (randomNum == 0) {
+                            this.textContent = "0";
+                            randomNum = 1;
+                            showPlayerTurn.textContent = "Player X Turn";
+                        } else {
+                            this.textContent = "X";
+                            randomNum = 0;
+                            showPlayerTurn.textContent = "Player O Turn";
+                        }
                     }
                 });
             });
